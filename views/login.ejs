@@ -1,0 +1,13 @@
+
+<%-include('header.ejs')%> 
+<form action="/loginProc" method="post">
+  <ul>
+    <!-- <li>로그인</li> -->
+    <li>메일 : <input type="text" name="email" required style="margin-bottom:10px"></li>
+    <li>비번 : <input type="password" name="password" required style="margin-bottom:10px"></li>
+    
+       <button>로그인</button>
+       <a href="/regist">등록하기</a>
+  </ul>
+</form>
+<%-include('footer.ejs')%>

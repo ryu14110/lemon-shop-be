@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mysql-express2</title>
+</head>
+<body>
+  <h1>sticky lemon</h1>
+  <header style="border-bottom:1px solid #aaa; margin-bottom:10px; padding-bottom:10px">
+    <nav>
+      <a href="/">홈</a> |
+      
+      <% if(email){ %>
+        <%=fullname%>님 환영합니다.
+        <a href="/logout">로그아웃</a>
+      <% }else{ %>
+        <a href="/login">로그인</a>
+      <% } %>
+      
+    </nav>
+  </header>
+  

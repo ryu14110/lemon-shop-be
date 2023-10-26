@@ -1,0 +1,15 @@
+
+<%-include('header.ejs')%> 
+<form action="/registProc" method="post">
+  <ul>
+    <!-- <li>회원등록</li> -->
+    <li>메일 : <input type="text" name="email" required style="margin-bottom:10px"></li>
+    <li>비번 : <input type="password" name="password" required style="margin-bottom:10px"></li>
+    <li>이름 : <input type="text" name="fullname" required style="margin-bottom:10px"></li>
+    <li>주소 : <input type="text" name="address" required style="margin-bottom:10px"></li>
+    <li>전화 : <input type="text" name="phone" required style="margin-bottom:10px"></li>
+     
+       <button>등록하기</button>
+  </ul>
+</form>
+<%-include('footer.ejs')%>
