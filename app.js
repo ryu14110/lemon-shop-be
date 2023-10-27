@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 var session = require('express-session')
 const app = express()
 const port = 4000
+const cors = require('cors')
+app.use(cors())
 
 require('dotenv').config()
 
@@ -14,6 +16,7 @@ console.log('Connected to ict-team!')
 
 app.set('view engine','ejs')
 app.set('views','./views')
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'))
 
@@ -70,12 +73,14 @@ app.get('/regist', (req, res) => {
 app.post('/registProc', (req, res) => {  // 회원 등록 하기
   const email = req.body.email;
   const password = req.body.password;
-  const fullname = req.body.fullname;
+  const fullName = req.body.fullName;
   const address = req.body.address;
   const phone = req.body.phone;
+
+  console.log(email, password, fullName, address, phone);
  
   var sql = `insert into user(email,password,fullname,address,phone)values(?,?,?,?,?)`  
-  var values = [email,password,fullname,address,phone];  
+  var values = [email,password,fullName,address,phone];
   connection.query(sql, values, function(err, result){
     if(err) throw err;
     console.log('자료 1개 삽입했습니다.');
