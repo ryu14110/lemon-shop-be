@@ -38,9 +38,9 @@ app.use((req, res, next) => {
   res.locals.email = "";
   res.locals.password = "";
 
-  if (req.session.member) {
-    res.locals.user_id = req.session.user.email;
-    res.locals.name = req.session.user.password;
+  if (req.session.user) {
+    res.locals.email = req.session.user.email;
+    res.locals.fullname = req.session.user.password;
   }
   next();
 });
